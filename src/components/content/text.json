@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_texts",
+  "info": {
+    "displayName": "text",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "text_content": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
