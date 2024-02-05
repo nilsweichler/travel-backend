@@ -47,7 +47,7 @@
           "translate": "translate"
         }
       },
-      "inversedBy": "post"
+      "mappedBy": "post"
     },
     "content": {
       "pluginOptions": {
