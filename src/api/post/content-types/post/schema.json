@@ -40,14 +40,14 @@
     },
     "category": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::category.category",
       "pluginOptions": {
         "translate": {
           "translate": "translate"
         }
       },
-      "mappedBy": "post"
+      "inversedBy": "posts"
     },
     "content": {
       "pluginOptions": {
@@ -77,17 +77,17 @@
       "component": "shared.seo"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      },
-      "required": true
+      }
     }
   }
 }

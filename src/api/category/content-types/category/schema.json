@@ -37,17 +37,6 @@
       "type": "uid",
       "targetField": "title"
     },
-    "post": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::post.post",
-      "pluginOptions": {
-        "translate": {
-          "translate": "translate"
-        }
-      },
-      "inversedBy": "category"
-    },
     "description": {
       "pluginOptions": {
         "i18n": {
@@ -72,6 +61,12 @@
         }
       },
       "component": "shared.seo"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "category"
     }
   }
 }

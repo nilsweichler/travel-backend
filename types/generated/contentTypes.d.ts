@@ -395,16 +395,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    post: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'api::post.post'
-    > &
-      Attribute.SetPluginOptions<{
-        translate: {
-          translate: 'translate';
-        };
-      }>;
     description: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -424,6 +414,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           translate: 'translate';
         };
       }>;
+    posts: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::post.post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -483,7 +478,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       }>;
     category: Attribute.Relation<
       'api::post.post',
-      'oneToOne',
+      'manyToOne',
       'api::category.category'
     > &
       Attribute.SetPluginOptions<{
